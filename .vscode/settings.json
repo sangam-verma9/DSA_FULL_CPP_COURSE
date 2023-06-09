@@ -1,7 +1,12 @@
 {
-    "C_Cpp.errorSquiggles": "disabled",
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp"
-    }
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "chrono": "cpp",
+    "random": "cpp",
+    "limits": "cpp",
+    "valarray": "cpp",
+    "vector": "cpp"
+  }
 }
