@@ -6,11 +6,11 @@ void solve(TreeNode *root, vector<int> &ans)
     {
         return;
     }
-    preorder(root->left, ans);
+    inorder(root->left, ans);
     ans.push_back(root->data);
-    preorder(root->right, ans);
+    inorder(root->right, ans);
 }
-vector<int> preorder(TreeNode *root)
+vector<int> inorder(TreeNode *root)
 {
     vector<int> ans;
     solve(root, ans);
