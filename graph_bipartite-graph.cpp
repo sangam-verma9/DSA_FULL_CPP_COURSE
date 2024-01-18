@@ -1,3 +1,4 @@
+// A bipartite graph is that graph in which we can color all nodes with different adjecent color
 #include <bits/stdc++.h>
 using namespace std;
 // bfs
@@ -30,7 +31,7 @@ public:
     }
     bool isBipartite(int V, vector<int> adj[])
     {
-        int col[V];
+        int col[V]; // color of node (0 or 1)
         for (int i = 0; i < V; i++)
             col[i] = -1;
         for (int i = 0; i < V; i++)
