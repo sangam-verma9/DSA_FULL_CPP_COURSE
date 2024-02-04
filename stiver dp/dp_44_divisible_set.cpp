@@ -1,3 +1,4 @@
+// https://www.codingninjas.com/studio/problems/divisible-set_3754960
 #include <bits/stdc++.h>
 using namespace std;
 // Idea is here sort the ele so that no need wory to increasing becuse

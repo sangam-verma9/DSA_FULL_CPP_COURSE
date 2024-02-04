@@ -1,3 +1,4 @@
+// https://www.codingninjas.com/studio/problems/longest-string-chain_3752111
 #include <bits/stdc++.h>
 using namespace std;
 // Here idea is only change instead of number in LIS ,here string so no

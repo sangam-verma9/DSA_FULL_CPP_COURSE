@@ -24,8 +24,7 @@ string longest_common_subsequence(const string &s1, const string &s2)
 }
 
 //****** Tabulation *****
-
-int lcs(string s, string t)
+string longest_common_subsequence(const string &s, const string &t)
 {
     int n = s.length();
     int m = t.length();
@@ -44,37 +43,35 @@ int lcs(string s, string t)
                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
         }
     }
-    return dp[n][m];
-}
-int len = dp[n][m];
-string ans = "";
-for (int i = 0; i < len; i++)
-{
-    ans += '$';
-}
-int ind = len - 1;
-int i = n, j = m;
-while (i > 0 && j > 0)
-{
-    if (s[i - 1] == t[j - 1])
+    int len = dp[n][m];
+    string ans = "";
+    for (int i = 0; i < len; i++)
     {
-        ans[ind] = s[i - 1];
-        ind--;
-        i--, j--;
+        ans += '$';
     }
-    else if (dp[i - 1][j] > dp[i][j - 1])
+    int ind = len - 1;
+    int i = n, j = m;
+    while (i > 0 && j > 0)
     {
-        i--;
+        if (s[i - 1] == t[j - 1])
+        {
+            ans[ind] = s[i - 1];
+            ind--;
+            i--, j--;
+        }
+        else if (dp[i - 1][j] > dp[i][j - 1])
+        {
+            i--;
+        }
+        else
+        {
+            j--;
+        }
     }
-    else
-    {
-        j--;
-    }
+    return ans;
 }
-cout << ans;
 
-int main()
-{
-
-    return 0;
-}
+    int main()
+    {
+        return 0;
+    }
