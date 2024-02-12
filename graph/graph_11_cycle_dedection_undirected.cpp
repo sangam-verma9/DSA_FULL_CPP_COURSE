@@ -41,9 +41,10 @@ string cyclededection(vector<vector<int>>& edges,int n, int m){
             if(ans){
                 return "YES";
             }
-            else return "NO";
+            
         }
     }
+    return "NO";
 }
 int main() {
 
