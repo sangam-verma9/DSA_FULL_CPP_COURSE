@@ -1,5 +1,5 @@
 // Given an array of length ‘N’, where each element denotes the position of a stall. Now you have ‘N’ stalls and an integer ‘K’ which denotes the number of cows that are aggressive. To prevent the cows from hurting each other, you need to assign the cows to the stalls, such that the minimum distance between any two of them is as large as possible. Return the largest minimum distance.
-
+// https://www.codingninjas.com/studio/problems/aggressive-cows_1082559
 #include <bits/stdc++.h>
 using namespace std;
 bool ispossible(int *stalls, int k, int mid, int n)
@@ -48,10 +48,10 @@ int aggressive_cow(int *stalls, int k, int n)
 }
 int main()
 {
-    int stalls[] = {4,2,1,3,6};
+    int stalls[] = {4, 2, 1, 3, 6};
     int n = sizeof(stalls) / sizeof(int);
-    sort(stalls,stalls+n);
+    sort(stalls, stalls + n);
     int k = 2;
-    cout<<aggressive_cow(stalls, k, n);
+    cout << aggressive_cow(stalls, k, n);
     return 0;
 }
