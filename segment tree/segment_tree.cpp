@@ -53,7 +53,7 @@ void updateRange(int ind,int low,int high,int rs,int re,int inc){
         return ;
     }
     // reached to leaf node
-    if(left==high){
+    if(low==high){
         seg[ind]+=inc;
         return;
     }
