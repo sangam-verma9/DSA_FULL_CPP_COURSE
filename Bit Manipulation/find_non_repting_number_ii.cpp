@@ -1,6 +1,14 @@
 //  https://www.codingninjas.com/studio/guided-paths/competitive-programming/content/148629/offering/1792858
 #include<bits/stdc++.h>
 using namespace std;
+
+/*
+    ---example for get rightmost set bit---
+    x:             01110000
+    ~x:            10001111
+    -x or ~x + 1:  10010000
+    x & -x:        00010000
+*/
 vector<int> findNonRepeating(vector<int> a)
 {
     int n = 0;

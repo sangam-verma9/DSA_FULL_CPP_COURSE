@@ -16,7 +16,7 @@ struct Node
     {
         return links[ch - 'a'];
     }
-    bool setEnd()
+    void setEnd()
     {
         flag = true;
     }
