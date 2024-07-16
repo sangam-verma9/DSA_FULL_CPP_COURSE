@@ -14,9 +14,9 @@ int countSetBits(int N)
     }
     x -= 1;
     int bit0tomax2topower = x * (1 << (x - 1));
-    int bitmax2ton = N - (1 << x) + 1;
+    int bitmax2topowerton = N - (1 << x) + 1;
     int remain = N - (1 << x);
-    return bit0tomax2topower + bitmax2ton + countSetBits(remain);
+    return bit0tomax2topower + bitmax2topowerton + countSetBits(remain);
 }
 int main(){
 

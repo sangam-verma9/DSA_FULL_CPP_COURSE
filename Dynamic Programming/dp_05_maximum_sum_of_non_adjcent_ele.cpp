@@ -51,7 +51,9 @@ int maximumNonAdjacentSum(vector<int> &nums)
     dp[0] = nums[0];
     for (int i = 1; i < n; i++)
     {
-        int include = nums[i] + dp[i - 2];
+        int include = nums[i];
+        if (i > 1)
+            include += [i - 2];
         int exclude = dp[i - 1] + 0;
         dp[i] = max(include, exclude);
     }
