@@ -21,7 +21,7 @@ public:
                 int adjw = i[1];
                 if (nodedis + adjw < dis[adjnode])
                 {
-                    if (dis[adjnode] == 1e9)
+                    if (dis[adjnode] != 1e9)
                     {
                         st.erase({dis[adjnode], adjnode});
                     }
