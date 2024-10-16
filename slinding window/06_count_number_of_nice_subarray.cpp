@@ -1,37 +1,57 @@
-// https://leetcode.com/problems/count-number-of-nice-subarrays/
-#include<bits/stdc++.h>
-using namespace std;
 class Solution
 {
-public:
-    int atmost(vector<int> nums, int k)
+    bool isvavel(char &ch)
     {
-        if (k < 0)
-            return 0;
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            return true;
+        return false;
+    }
+
+public:
+    long long atmost(string &word, int k)
+    {
+        int n = word.size();
+        unordered_map<char, int> mp;
+        long long ans = 0;
+        int conso = 0;
         int i = 0, j = 0;
-        int cnt = 0;
-        int ans = 0;
-        while (j < nums.size())
+        while (j < n)
         {
-            if (nums[j] & 1)
-                cnt++;
-            while (cnt > k)
+            if (isvavel(word[j]))
             {
-                if (nums[i] & 1)
-                    cnt--;
+                mp[word[j]]++;
+            }
+            else
+            {
+                conso++;
+            }
+            if (mp['a'] < 0 || mp['e'] < 0 || mp['i'] < 0 || mp['o'] < 0 || mp['u'] < 0)
+            {
+                j++;
+                continue;
+            }
+            while (conso > k)
+            {
+                if (isvavel(word[i]))
+                {
+                    mp[word[i]]--;
+                }
+                else
+                {
+                    conso--;
+                }
                 i++;
             }
-            ans += j - i + 1;
+            if (mp['a'] > 0 && mp['e'] > 0 && mp['i'] > 0 && mp['o'] > 0 && mp['u'] > 0)
+            {
+                ans += j - i + 1 - 4 - k;
+            }
             j++;
         }
         return ans;
     }
-    int numberOfSubarrays(vector<int> &nums, int k)
+    long long countOfSubstrings(string word, int k)
     {
-        return atmost(nums, k) - atmost(nums, k - 1);
+        return atmost(word, k) - (k > 0 ? atmost(word, k - 1) : 0);
     }
 };
-int main(){
-
-return 0;
-}

@@ -53,7 +53,7 @@ int maximumNonAdjacentSum(vector<int> &nums)
     {
         int include = nums[i];
         if (i > 1)
-            include += [i - 2];
+            include += dp[i - 2];
         int exclude = dp[i - 1] + 0;
         dp[i] = max(include, exclude);
     }
