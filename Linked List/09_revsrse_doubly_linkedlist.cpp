@@ -12,7 +12,7 @@ public:
         while (curr != NULL)
         {
             Node *nextNode = curr->next;
-            curr->next = curr->prev;
+            curr->next = curr->prev; //(OR) curr->next = prev;
             curr->prev = nextNode;
             prev = curr;
             curr = nextNode;
