@@ -43,8 +43,8 @@ public:
     {
         // Code here
         vector<int> vis(V, 0);
-        int tin[V];
-        int low[V];
+        int tin[V]; // time of intersection
+        int low[V]; // lowest time of intersection if any node is neighbor and alredy visited apart form parent then take min of min (node,tin neighbor not min neighbor as in bridges)
         vector<int> mark(V, 0);
         for (int i = 0; i < V; i++)
         {
