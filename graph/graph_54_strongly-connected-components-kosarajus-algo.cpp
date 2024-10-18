@@ -1,3 +1,5 @@
+// https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1
+// A strongly connected component is a component in which we can go from one node to all another node in that component
 #include <bits/stdc++.h>
 using namespace std;
 class Solution

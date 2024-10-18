@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/critical-connections-in-a-network/
 #include <bits/stdc++.h>
 using namespace std;
+// Bridge in a graph is a edge, after removing that graph is disconnected in two components
 class Solution
 {
 private:
@@ -40,8 +41,8 @@ public:
             adj[it[1]].push_back(it[0]);
         }
         vector<int> visited(n, 0);
-        vector<int> tin(n, 0);
-        vector<int> low(n, 0);
+        vector<int> tin(n, 0); // first time of insertion
+        vector<int> low(n, 0); // lowest time of insertion apart from parent if any visited node is neighbor then take its minimum time of insertion
         vector<vector<int>> ans;
         dfs(0, -1, visited, tin, low, adj, ans);
         return ans;
