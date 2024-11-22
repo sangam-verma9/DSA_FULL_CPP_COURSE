@@ -11,10 +11,12 @@ public:
             ans.push_back(s);
             return;
         }
+        // not make 1
         solve(ind + 1, num, s, ans);
+        // make 1 
         s[ind] = '1';
         solve(ind + 2, num, s, ans);
-        s[ind] = '0';
+        s[ind] = '0'; // backtrack
     }
     vector<string> generateBinaryStrings(int num)
     {
