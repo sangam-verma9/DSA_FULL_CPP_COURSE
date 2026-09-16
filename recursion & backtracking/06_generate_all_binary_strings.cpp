@@ -1,5 +1,5 @@
 // https://www.geeksforgeeks.org/problems/generate-all-binary-strings/0
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 class Solution
 {
@@ -13,9 +13,9 @@ public:
         }
         // not make 1
         solve(ind + 1, num, s, ans);
-        // make 1 
+        // make 1
         s[ind] = '1';
-        solve(ind + 2, num, s, ans);
+        solve(ind + 1, num, s, ans);
         s[ind] = '0'; // backtrack
     }
     vector<string> generateBinaryStrings(int num)
@@ -27,7 +27,8 @@ public:
         return ans;
     }
 };
-int main(){
+int main()
+{
 
-return 0;
+    return 0;
 }
